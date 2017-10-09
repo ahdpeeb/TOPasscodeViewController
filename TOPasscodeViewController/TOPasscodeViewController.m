@@ -40,7 +40,7 @@
 @property (nonatomic, strong, readwrite) UIView *backgroundView;
 @property (nonatomic, strong, readwrite) TOPasscodeView *passcodeView;
 @property (nonatomic, strong, readwrite) UIButton *biometricButton;
-@property (nonatomic, strong, readwrite) UIButton *cancelButton;
+//@property (nonatomic, strong, readwrite) UIButton *cancelButton;
 
 
 @end
@@ -416,11 +416,11 @@
         }
     }
     else if (sender == self.biometricButton) {
-        [self keypadButtonTapped];
-
         if ([self.delegate respondsToSelector:@selector(didPerformBiometricValidationRequestInPasscodeViewController:)]) {
             [self.delegate didPerformBiometricValidationRequestInPasscodeViewController:self];
         }
+        
+        [self.cancelButton setHidden:YES];
     }
 }
 
@@ -616,7 +616,7 @@
     void (^setViewsHiddenBlock)(BOOL) = ^(BOOL hidden) {
         self.passcodeView.hidden = hidden;
         self.leftButton.hidden = hidden;
-        self.rightButton.hidden = hidden;
+        self.rightButton.hidden = !self.passcodeView.passcode.length;
     };
 
     void (^completionBlock)(BOOL) = ^(BOOL complete) {

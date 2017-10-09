@@ -116,7 +116,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) UIButton *biometricButton;
 
 /** The Cancel, visible if `rightAccessoryButton` is nil. */
-@property (nonatomic, readonly) UIButton *cancelButton;
+@property (nonatomic, strong) UIButton *cancelButton;
 
 /** The left accessory button. Setting this will override the 'Touch ID' button. */
 @property (nonatomic, strong, nullable) UIButton *leftAccessoryButton;
