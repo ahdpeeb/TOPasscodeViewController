@@ -416,6 +416,8 @@
         }
     }
     else if (sender == self.biometricButton) {
+        [self keypadButtonTapped];
+
         if ([self.delegate respondsToSelector:@selector(didPerformBiometricValidationRequestInPasscodeViewController:)]) {
             [self.delegate didPerformBiometricValidationRequestInPasscodeViewController:self];
         }
@@ -424,9 +426,12 @@
 
 - (void)keypadButtonTapped
 {
-    NSString *title = self.passcodeView.passcode.length > 0 ? @"Delete" : @"Cancel";
+    BOOL shouldDelete = self.passcodeView.passcode.length > 0;
+    NSString *title = shouldDelete ? @"Delete" : @"Cancel";
+    
     [UIView performWithoutAnimation:^{
         [self.cancelButton setTitle:title forState:UIControlStateNormal];
+        [self.cancelButton setHidden:!shouldDelete];
     }];
 }
 
