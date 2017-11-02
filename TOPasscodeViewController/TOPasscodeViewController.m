@@ -154,7 +154,7 @@
     BOOL isPad = UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
     
     if (!self.leftAccessoryButton && self.allowBiometricValidation && !self.biometricButton) {
-        self.biometricButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        self.biometricButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.biometricButton setTitle:@"Touch ID" forState:UIControlStateNormal];
         [self.biometricButton addTarget:self action:@selector(accessoryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -173,7 +173,7 @@
     }
     
     if (!self.rightAccessoryButton && !self.cancelButton) {
-        self.cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        self.cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [self.cancelButton setTitle:NSLocalizedString(@"Delete", @"Delete") forState:UIControlStateNormal];
         self.cancelButton.titleLabel.font = buttonFont;
         [self.cancelButton addTarget:self action:@selector(accessoryButtonTapped:) forControlEvents:UIControlEventTouchUpInside];

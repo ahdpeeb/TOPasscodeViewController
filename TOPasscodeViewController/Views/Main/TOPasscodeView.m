@@ -72,6 +72,38 @@
     return self;
 }
 
+#pragma Accsessors
+
+- (void)setTitleLabelColor:(UIColor *)titleLabelColor {
+    _titleLabelColor = titleLabelColor;
+    
+    self.titleLabel.textColor = titleLabelColor;
+}
+
+- (void)setInputProgressViewTintColor:(UIColor *)inputProgressViewTintColor {
+    _inputProgressViewTintColor = inputProgressViewTintColor;
+    
+    self.inputField.tintColor = inputProgressViewTintColor;
+}
+
+- (void)setKeypadButtonBackgroundColor:(UIColor *)keypadButtonBackgroundColor {
+     _keypadButtonBackgroundColor = keypadButtonBackgroundColor;
+    
+    self.keypadView.buttonBackgroundColor = keypadButtonBackgroundColor;
+}
+
+- (void)setKeypadButtonTextColor:(UIColor *)keypadButtonTextColor {
+     _keypadButtonTextColor = keypadButtonTextColor;
+    
+    self.keypadView.buttonTextColor = keypadButtonTextColor;
+}
+
+- (void)setKeypadButtonHighlightedTextColor:(UIColor *)keypadButtonHighlightedTextColor {
+     _keypadButtonHighlightedTextColor = keypadButtonHighlightedTextColor;
+    
+    self.keypadView.buttonHighlightedTextColor = keypadButtonHighlightedTextColor;
+}
+
 - (void)setUp
 {
     // Set up default properties
