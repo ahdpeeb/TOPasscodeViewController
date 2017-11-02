@@ -574,7 +574,7 @@
 
 - (UIColor *)inputProgressViewTintColor { return self.passcodeView.inputProgressViewTintColor; }
 
-- (void)setkeypadButtonBackgroundTintColor:(UIColor *)keypadButtonBackgroundTintColor
+- (void)setKeypadButtonBackgroundTintColor:(UIColor *)keypadButtonBackgroundTintColor
 {
     self.passcodeView.keypadButtonBackgroundColor = keypadButtonBackgroundTintColor;
 }
